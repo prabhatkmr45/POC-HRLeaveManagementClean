@@ -28,8 +28,8 @@ namespace HRLeaveManage.Application.Feature.LeaveType.Commands.CreateLeaveType
             // Convert to domain entity object
             var leaveTypeCreate = _imapper.Map<HRLeaveManagement.Domain.LeaveType>(request);
             // Add to database
-            var leaveType = await _leaveTypeRepository.CreateAsync(leaveTypeCreate);
-            return leaveType.Id;
+             await _leaveTypeRepository.CreateAsync(leaveTypeCreate);
+            return leaveTypeCreate.Id;
         }
     }
 }
